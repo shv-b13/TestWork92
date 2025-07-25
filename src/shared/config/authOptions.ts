@@ -22,7 +22,7 @@ export const authOptions: AuthOptions = {
 
           const user: User = res.data;
 
-          if (user && user.token) {
+          if (user && user.accessToken) {
             return user;
           }
 

@@ -1,3 +1,14 @@
+'use client';
+
+import { LoginForm } from '@/features/auth/ui/LoginForm';
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
+
 export default function LoginPage() {
-  return <div>Login page</div>;
+  const router = useRouter();
+  const { data: session } = useSession();
+  if (session) {
+    router.push('/');
+  }
+  return <LoginForm />;
 }
