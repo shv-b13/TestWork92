@@ -1,0 +1,39 @@
+.flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.2s;
+  background: #fff;
+}
+
+.card img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.card h3 {
+  font-size: 16px;
+  margin-bottom: 0.5rem;
+}
+
+.card p:first-of-type {
+  color: #96a0b4;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin: 0.25rem 0;
+}
+
+.card p:last-of-type {
+  color: #d10023;
+  font-weight: 900;
+  margin: 0.5rem;
+}

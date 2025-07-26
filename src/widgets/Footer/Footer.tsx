@@ -1,6 +1,7 @@
 'use client';
 
 import { useSession } from 'next-auth/react';
+import { Container } from '@/shared/ui/Container/Container';
 
 export const Footer = () => {
   const { data: session } = useSession();
@@ -9,9 +10,9 @@ export const Footer = () => {
 
   return (
     <footer style={{ padding: '1rem', borderTop: '1px solid #ccc', marginTop: 'auto' }}>
-      <div>
+      <Container>
         © {year} {email ? `Logged as ${email}` : ''}
-      </div>
+      </Container>
     </footer>
   );
 };

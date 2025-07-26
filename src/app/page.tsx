@@ -1,5 +1,9 @@
-import styles from './page.module.css';
+import { ProductSection } from '@/widgets/ProductSection/ProductSection';
 
 export default function Home() {
-  return <div></div>;
+  return (
+    <>
+      <ProductSection />
+    </>
+  );
 }

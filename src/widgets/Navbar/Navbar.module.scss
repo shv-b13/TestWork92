@@ -1,0 +1,22 @@
+.navbar {
+  padding: 1rem 0;
+  background-color: #fff;
+  border-top: 2px solid red;
+  border-bottom: 1px solid #ddd;
+}
+
+.inner {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #111;
+  transition: color 0.2s;
+}
+
+.navbar a:hover {
+  color: #d00;
+}
