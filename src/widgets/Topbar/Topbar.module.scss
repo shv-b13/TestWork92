@@ -11,8 +11,10 @@
 
 .inner {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 0.5rem;
   align-items: center;
+  text-align: center;
 }
 
 .left,
@@ -20,6 +22,14 @@
   display: flex;
   gap: 1rem;
   align-items: center;
+  flex-wrap: wrap;
+
+  div {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.5rem;
+  }
 }
 
 .right a {
@@ -28,4 +38,12 @@
   display: flex;
   align-items: center;
   gap: 4px;
+}
+
+@media (min-width: 768px) {
+  .inner {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
 }

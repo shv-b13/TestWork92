@@ -16,9 +16,15 @@ export const Topbar = () => {
       <Container>
         <div className={styles.inner}>
           <div className={styles.left}>
-            <FaPhone /> <span>+021-95-51-84</span>
-            <FaEnvelope /> <span>shop@abelohost.com</span>
-            <FaMapMarkerAlt /> <span>1734 Stonecoal Road</span>
+            <div>
+              <FaPhone /> <span>+021-95-51-84</span>
+            </div>
+            <div>
+              <FaEnvelope /> <span>shop@abelohost.com</span>
+            </div>
+            <div>
+              <FaMapMarkerAlt /> <span>1734 Stonecoal Road</span>
+            </div>
           </div>
           <div className={styles.right}>
             {user ? (

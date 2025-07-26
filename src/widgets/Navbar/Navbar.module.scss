@@ -7,7 +7,9 @@
 
 .inner {
   display: flex;
-  gap: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
 }
 
 .navbar a {
@@ -15,8 +17,14 @@
   font-weight: 400;
   color: #111;
   transition: color 0.2s;
+
+  &:hover {
+    color: #d00;
+  }
 }
 
-.navbar a:hover {
-  color: #d00;
+@media (min-width: 768px) {
+  .inner {
+    justify-content: flex-start;
+  }
 }
