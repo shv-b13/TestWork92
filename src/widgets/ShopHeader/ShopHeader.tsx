@@ -6,7 +6,9 @@ export const ShopHeader = () => {
     <div className={styles.header}>
       <Container>
         <div className={styles.inner}>
-          <h1 className={styles.logo}>Abelohost Shop.</h1>
+          <h1 className={styles.logo}>
+            Abelohost Shop<span className={styles.dot}>.</span>
+          </h1>
           <div className={styles.banner}>600 x 70</div>
         </div>
       </Container>

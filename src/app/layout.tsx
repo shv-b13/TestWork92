@@ -4,6 +4,7 @@ import { Footer } from '@/widgets/Footer/Footer';
 import { Topbar } from '@/widgets/Topbar/Topbar';
 import { ShopHeader } from '@/widgets/ShopHeader/ShopHeader';
 import { Navbar } from '@/widgets/Navbar/Navbar';
+import './globals.scss'
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
