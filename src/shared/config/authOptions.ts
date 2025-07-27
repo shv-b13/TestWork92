@@ -1,6 +1,7 @@
+import axios from 'axios';
 import { AuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
-import axios from 'axios';
+
 import { User } from '@/shared/types/user';
 
 export const authOptions: AuthOptions = {
@@ -25,12 +26,10 @@ export const authOptions: AuthOptions = {
           if (user && user.accessToken) {
             return user;
           }
-
-          return null;
         } catch (err) {
           console.error('Login failed', err);
-          return null;
         }
+        return null;
       },
     }),
   ],
@@ -52,5 +51,5 @@ export const authOptions: AuthOptions = {
   pages: {
     signIn: '/login',
   },
-  secret: 'my-secret', // на проде бы сделал в .env.local
+  secret: 'my-secret',
 };

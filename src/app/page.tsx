@@ -1,9 +1,5 @@
-import { ProductSection } from '@/widgets/ProductSection/ProductSection';
+import { ProductSection } from '@/widgets/ProductSection';
 
 export default function Home() {
-  return (
-    <>
-      <ProductSection />
-    </>
-  );
+  return <ProductSection />;
 }

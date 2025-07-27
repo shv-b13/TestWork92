@@ -1,6 +1,6 @@
-import { create } from 'zustand';
+import { api } from '@/shared/api';
 import { Product } from '@/shared/types/product';
-import { api } from '@/shared/lib/api';
+import { create } from 'zustand';
 
 type ProductsState = {
   products: Product[];

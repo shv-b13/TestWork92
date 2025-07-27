@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Тестовое задание:
 
-## Getting Started
+Создать веб-приложение с использованием публичного API DummyJSON (https://dummyjson.com/),  реализующее функционал авторизации пользователей и отображения списка товаров.
 
-First, run the development server:
+## Функциональные требования:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Реализовать авторизацию пользователей с использованием JWT.
+2. Реализовать получение и отображение списка товаров
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Компоненты приложения:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+#### Страница авторизации
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+* Содержит форму с полями: username и password, а также кнопку "Login".
+* Поля формы должны быть валидированы перед отправкой запроса: не пустое, минимум 3 символа.
+* При неудачной авторизации отобразить сообщение об ошибке.
+* При успешной авторизации выполнить редирект на главную страницу.
 
-## Learn More
+#### Главная страница
 
-To learn more about Next.js, take a look at the following resources:
+* Отображает 12 продуктов.
+* Каждый продукт представлен карточкой, содержащей: изображение товара, название товара, категорию  товара, цену товара.
+* Если пользователь авторизован, на каждой карточке отображается кнопка "Add to cart" (функционал  кнопки реализовывать не требуется).
+#### Блок Header
+* Для неавторизованного пользователя: содержит ссылку на страницу авторизации ("Login").
+* Для авторизованного пользователя: отображает имя, фамилию пользователя и кнопку/ссылку "Logout".
+#### Блок Footer
+* Содержит текущий год и текст:
+  * Для авторизованного пользователя: текущий год и "Logged as {user email}". 
+  * Для неавторизованного пользователя: только текущий год.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Технологический стек:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* TypeScript
+* NextJS (App Router)
+* Zustand
+* Axios
+* SCSS-модули
+* Prettier
+* ESLint
+* Stylelint
 
-## Deploy on Vercel
+## Технические требования
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+#### Адаптивность и кроссбраузерность
+Приложение должно корректно отображаться на десктопных и мобильных устройствах.
+#### Стилизация
+Используйте SCSS-модули и возможности scss.
+Запрещено использование UI-библиотек.
+#### Работа с API
+Запросы к API должны сопровождаться индикаторами загрузки.
+Обрабатывать возможные ошибки API и отображать пользователю понятные сообщения.
+#### Качество кода
+Код должен быть структурированным, читаемым и следовать принципам DRY и KISS
+Использовать TypeScript для строгой типизации всех компонентов, хуков и API-ответов.
+Настроить Prettier, ESLint и Stylelint для единообразия кода и стилей.
+## Критерии оценки
+* Корректность работы функционала авторизации и отображения товаров.
+* Качество и чистота кода (структура, читаемость, типизация).
+* Адаптивность и визуальная составляющая приложения.
+* Соблюдение технического стека и требований к стилизации.

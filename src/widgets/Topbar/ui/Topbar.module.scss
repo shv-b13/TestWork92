@@ -1,0 +1,49 @@
+.topbar {
+  background-color: #111;
+  color: #fff;
+  font-size: 14px;
+  padding: 0.5rem 0;
+
+  svg {
+    color: red;
+  }
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  text-align: center;
+}
+
+.left,
+.right {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+
+  div {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+}
+
+.right a {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+@media (min-width: 768px) {
+  .inner {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
