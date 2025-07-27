@@ -19,10 +19,12 @@ export const useProductsStore = create<ProductsState>((set) => ({
 
     try {
       const res = await api.get<{ products: Product[] }>('/products?limit=12');
-      set({ products: res.data.products, isLoading: false });
+      set({ products: res.data.products });
     } catch (err) {
       console.error('Failed to load products:', err);
-      set({ error: 'Failed to load products', isLoading: false });
+      set({ error: 'Failed to load products' });
+    } finally {
+      set({ isLoading: false });
     }
   },
 }));

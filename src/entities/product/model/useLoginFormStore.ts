@@ -8,7 +8,7 @@ interface LoginFormState {
   loading: boolean;
   setUsername: (value: string) => void;
   setPassword: (value: string) => void;
-  handleLogin: () => Promise<boolean>;
+  handleLogin: () => Promise<void>;
   resetForm: () => void;
 }
 
@@ -33,13 +33,11 @@ export const useLoginFormStore = create<LoginFormState>((set, get) => ({
 
   handleLogin: async () => {
     const { username, password } = get();
+    set({ loading: true, error: null });
 
     if (username.length < minFormInputLength || password.length < minFormInputLength) {
-      set({ error: `Минимум ${minFormInputLength} символа`, loading: false });
-      return false;
+      set({ error: `Minimum of ${minFormInputLength} characters` });
     }
-
-    set({ loading: true, error: null });
 
     const res = await signIn('credentials', {
       username,
@@ -47,11 +45,12 @@ export const useLoginFormStore = create<LoginFormState>((set, get) => ({
       redirect: false,
     });
 
-    if (res?.error) {
-      set({ error: 'Неверное имя пользователя или пароль', loading: false });
-      return false;
-    }
+    set({ loading: false });
 
-    return true;
+    if (res?.error) {
+      set({ error: 'Invalid username or password' });
+    } else {
+      window.location.href = '/';
+    }
   },
 }));

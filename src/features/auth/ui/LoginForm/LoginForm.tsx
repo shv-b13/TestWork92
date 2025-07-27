@@ -1,6 +1,5 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
 import { FormEvent } from 'react';
 
 import { useLoginFormStore } from '@/entities/product/model';
@@ -11,12 +10,9 @@ export const LoginForm = () => {
   const { username, password, error, loading, setUsername, setPassword, handleLogin } =
     useLoginFormStore();
 
-  const router = useRouter();
-
-  const handleSubmit = async (event: FormEvent) => {
+  const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
-    const success = await handleLogin();
-    if (success) router.push('/');
+    handleLogin();
   };
 
   return (
